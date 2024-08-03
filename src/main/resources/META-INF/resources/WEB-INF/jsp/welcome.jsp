@@ -45,7 +45,9 @@
 				yArray.push(${interest});
 				yArray.push(${investmentAmount});
 				const layout = {
-					title : "Investment Breakup For Selected Fund"
+					title : "Investment Breakup For Selected Fund",
+					plot_bgcolor:"black",
+					paper_bgcolor:"#FFF3"
 				};
 
 				const data = [ {
@@ -63,11 +65,11 @@
 			<h1>Please Fill In Below Details:</h1>
 			<form method="post">
 				<div>
-					<label>Fund Name From List</label> <input type="text"
-						placeholder="Enter Fund Name" name="fundName" required> <label>SIP
-						Amount</label> <input type="text" placeholder="Enter SIP Amount"
-						name="sipAmount" required>
-					<button type="submit">Procced</button>
+						<label>Fund Name From List</label> 
+						<input type="text" placeholder="Enter Fund Name" name="fundName" required> 
+						<label>SIP Amount</label> 
+						<input type="text" placeholder="Enter SIP Amount" name="sipAmount" required>
+					    <button type="submit">Procced</button>
 				</div>
 			</form>
 		</div>

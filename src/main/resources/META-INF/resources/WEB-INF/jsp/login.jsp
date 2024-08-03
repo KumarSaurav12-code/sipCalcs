@@ -1,4 +1,5 @@
 <!DOCTYPE html> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html> 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,11 +20,10 @@
             <input type="email" placeholder="Enter Email" name="email" required>
             <label>Password: </label> 
             <input type="password" placeholder="Enter Password" name="password" required>
-            <button type="submit" >Procced</a></button> 
-            <button type="button" class="cancelbtn"> Cancel</button> 
+            <button type="submit" >Sign Up</a></button> 
             <pre>${errorMessage}</pre> 
         </div> 
-    </form>   
+    </form>    
 </body>   
 </html>
 

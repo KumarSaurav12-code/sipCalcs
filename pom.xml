@@ -41,11 +41,6 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
@@ -70,6 +65,14 @@
 		    <artifactId>thymeleaf-spring5</artifactId>
 		    <version>3.1.2.RELEASE</version>
 		</dependency>
+	<!--	<dependency>
+		    <groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency> -->
+		<dependency>
+	        <groupId>org.projectlombok</groupId>
+	        <artifactId>lombok</artifactId>
+    	</dependency>
 		<!--
 		<dependency>
   			<groupId>taglibs</groupId>

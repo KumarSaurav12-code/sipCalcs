@@ -1,4 +1,4 @@
-package com.springboot.learnspringboot.calculation;
+package com.springboot.learnspringboot.javaClasses;
 
 public class Projection {
 	private  int months;

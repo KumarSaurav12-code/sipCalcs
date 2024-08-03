@@ -1,4 +1,4 @@
-package com.springboot.learnspringboot.calculation;
+package com.springboot.learnspringboot.controllers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,14 +19,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
 import com.springboot.learnspringboot.databaseConnect.FundDetailsService;
-import com.springboot.learnspringboot.databaseConnect.Fund_Details;
+import com.springboot.learnspringboot.entities.Fund_Details;
+import com.springboot.learnspringboot.javaClasses.Projection;
 
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
+@SessionAttributes("model")
 public class ProjectionController {
 	
 	private Logger logger = LoggerFactory.getLogger(getClass());
@@ -55,7 +58,7 @@ public class ProjectionController {
 		model.addAttribute("fundDetails", listToShow);
 	}
 	
-	@GetMapping("welcome")
+	@GetMapping("/welcome")
 	public String welcomePage(HttpServletRequest request,ModelMap model) {
 		Map<String, ?> flashMap = RequestContextUtils.getInputFlashMap(request);
 		if(flashMap==null) {
@@ -65,6 +68,7 @@ public class ProjectionController {
 		}
 		String firstName = flashMap == null ? finalfirstName : (String) flashMap.get("firstName");
 		String lastName = flashMap == null ? finallastName : (String) flashMap.get("lastName");
+		model = (ModelMap) flashMap.get("lastName");
 		finalfirstName = firstName;
 		finallastName = lastName;
 		model.put("firstName", firstName);
@@ -73,7 +77,7 @@ public class ProjectionController {
 		return "welcome";
 	}
 	
-	@RequestMapping(value="welcome", method= RequestMethod.POST)
+	@RequestMapping(value="/welcome", method= RequestMethod.POST)
 	public String calculateSIPAmount(@RequestParam String fundName,
 			@RequestParam String sipAmount,ModelMap model) {
 		String resultString = "";

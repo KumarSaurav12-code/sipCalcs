@@ -1,4 +1,4 @@
-package com.springboot.learnspringboot.databaseConnect;
+package com.springboot.learnspringboot.entities;
 
 
 
@@ -9,31 +9,34 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "fund_details")
 public class Fund_Details {
 	
-	@Id 
-	private int id = 5;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String fund_Name;
 	private double rate;
 	private int months;
-	
-	public Fund_Details() {
-		super();
-	}
-	
-	public Fund_Details(int id,String fund_Name, double rate, int months) {
-		super();
-		this.id = id;
+	private String userName;
+
+	public Fund_Details(String fund_Name, double rate, int months, String userName) {
 		this.fund_Name = fund_Name;
 		this.rate = rate;
 		this.months = months;
+		this.userName = userName;
 	}
-	public int getId() {
-		return id;
+	
+	public Fund_Details() {
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -52,9 +55,21 @@ public class Fund_Details {
 	public int getMonths() {
 		return months;
 	}
+	public void setMonths(int months) {
+		this.months = months;
+	}
+	
+	@Override
+	public String toString() {
+		return "Fund_Details [id=" + id + ", fund_Name=" + fund_Name + ", rate=" + rate + ", months=" + months + "]";
+	}
+	
+	public int getId() {
+		return id;
+	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		return Objects.hash(fund_Name, id, months, rate);
 	}
 
 	@Override
@@ -66,14 +81,14 @@ public class Fund_Details {
 		if (getClass() != obj.getClass())
 			return false;
 		Fund_Details other = (Fund_Details) obj;
-		return id == other.id;
+		return Objects.equals(fund_Name, other.fund_Name) && id == other.id && months == other.months
+				&& Double.doubleToLongBits(rate) == Double.doubleToLongBits(other.rate);
 	}
-
-	public void setMonths(int months) {
-		this.months = months;
+	
+	public String getUserName() {
+		return userName;
 	}
-	@Override
-	public String toString() {
-		return "Fund_Details [id=" + id + ", fund_Name=" + fund_Name + ", rate=" + rate + ", months=" + months + "]";
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 }

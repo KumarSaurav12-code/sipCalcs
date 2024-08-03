@@ -1,9 +1,12 @@
 package com.springboot.learnspringboot.databaseConnect;
 
 import java.util.List;
+import lombok.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.springboot.learnspringboot.entities.Fund_Details;
 
 @Service
 public class FundDetailsService {

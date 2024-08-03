@@ -7,18 +7,17 @@
 <title>Add Fund</title>
 </head>
 <body>
-	<div class="form-popup" id="myForm">
-		<form action="/action_page.php" class="form-container">
-			<h1>Login</h1>
-
-			<label for="email"><b>Email</b></label> <input type="text"
-				placeholder="Enter Email" name="email" required> <label
-				for="psw"><b>Password</b></label> <input type="password"
-				placeholder="Enter Password" name="psw" required>
-
-			<button type="submit" class="btn">Login</button>
-			<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-		</form>
-	</div>
+	<form method="post">
+        <div class="container"> 
+            <label>Fund Name : </label> 
+            <input type="text" placeholder="Enter Fund Name" name="fundName" required>
+            <label>Rates : </label> 
+            <input type="number" placeholder="Enter Rates" name="rates" required>
+            <label>No of Years</label> 
+            <input type="number" placeholder="Enter No of Years" name="years" required>
+            <button type="submit" >Add Fund</button> 
+            <pre>${errorMessage}</pre> 
+        </div> 
+    </form>
 </body>
 </html>
