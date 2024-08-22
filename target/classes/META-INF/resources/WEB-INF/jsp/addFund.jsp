@@ -1,10 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
 <title>Add Fund</title>
+<c:url value="/css/welcome.css" var="cssURL" />
+<link rel="stylesheet" href="${cssURL}" />
 </head>
 <body>
 	<form method="post">

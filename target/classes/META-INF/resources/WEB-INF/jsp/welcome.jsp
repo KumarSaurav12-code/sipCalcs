@@ -13,8 +13,8 @@
 	<h1>Welcome ${firstName} ${lastName}</h1>
 	<ul>
 		<li>Home</li>
-		<li>Add Fund</li>
-		<li>Remove Fund</li>
+		<li><a href="http://localhost:8080/addFund">Add Fund</a></li>
+		<li><a href="http://localhost:8080/removeFund">Remove Fund</a></li>
 		<li style="float: right;"><a href="/">Logout</a></li>
 	</ul>
 	<div class="main">
